@@ -25,7 +25,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     // use the .addTo method to add the tile layer to the map.
     .addTo(map);
 
+// Visit http://leaflet-extras.github.io/leaflet-providers/preview/
+// Have fun playing around with different basemaps that are available to use in Leaflet
+
 // FIXME: Load CSV data into leaflet markers
+// Try Googling "leaflet csv" for a number of options
+// One of the most basic of these is leaflet-omnivore (which handles much more
+// than just CSV files)
+// ref: https://github.com/mapbox/leaflet-omnivore
 
 // FIXME: Add styling to markers
-// Use airport.png
+// hint: refer to this tutorial for an example of how to do this:
+// ref: https://leafletjs.com/examples/custom-icons/
+// Use airport.png image file
