@@ -24,16 +24,27 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 })
     // use the .addTo method to add the tile layer to the map.
     .addTo(map);
+// create leaflet icon
 
+var airportIcon = L.icon({
+    iconUrl: 'airport.png',
+    iconSize:[40,40]
+});
 // Visit http://leaflet-extras.github.io/leaflet-providers/preview/
 // Have fun playing around with different basemaps that are available to use in Leaflet
-
+var customLayer = L.geoJson(null, {
+    pointToLayer: function(feature,latlong){
+        return L.marker (latlong,{icon:airport})
+    }
+});
 // FIXME: Load CSV data into leaflet markers
 // Try Googling "leaflet csv" for a number of options
 // One of the most basic of these is leaflet-omnivore (which handles much more
 // than just CSV files)
 // ref: https://github.com/mapbox/leaflet-omnivore
-omnivore.csv('airports.csv').addTo(map);
+var airportsLayer = omnivore.csv('airports.csv', null, customLayer);
+    
+    airportsLayer.addTo(map);
 
 // FIXME: Add styling to markers
 // hint: refer to this tutorial for an example of how to do this:
