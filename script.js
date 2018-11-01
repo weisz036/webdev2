@@ -33,6 +33,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // One of the most basic of these is leaflet-omnivore (which handles much more
 // than just CSV files)
 // ref: https://github.com/mapbox/leaflet-omnivore
+omnivore.csv('airports.csv').addTo(map);
 
 // FIXME: Add styling to markers
 // hint: refer to this tutorial for an example of how to do this:
